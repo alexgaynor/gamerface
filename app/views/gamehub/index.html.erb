@@ -23,22 +23,53 @@
 	</div>
 </header>
 <div id="container">
-	<% @sorted.each do |game| %>
-		<section>
-			<li><%= game["createDate"] %></li>
-			<li>
+	<h1 class="hist-title">Match History</h1>
+	<div class="divider"></div><br />
+	<% history = @sorted.reverse %>
+	<% history.each do |game| %>
+		<section class="game-stats">
+			<li><h4>On <%= game["createDate"] %>,</h4></li>
+			<li><h4>You played
 				<% if game["ranked"] == false %>
-					Unranked
+					a unranked game
 				<% else %>
-					Ranked
+					a ranked game
 				<% end %>
-			</li>
+			</h4></li>
 			<% if game["premadeSize"] > 1  %>
-				<li>You premade a team with <%= game["premadeSize"] %>/5 players.</li>
+				<li><h4>and you premade a team with <%= game["premadeSize"] %>/5 players.</h4></li>
 			<% else %>
-				<li>You did not premake a team of players.</li>
+				<li><h4>and you did not premake a team of players.</h4></li>
 			<% end%>
-			
+			<!--<%= game["statistics"]["array"][8] %>-->
+			<ul>
+				<% game["statistics"]["array"].each do |stat| %>
+					<% case stat["statType"] %>
+					<% when "WIN" %>
+						<li id="win">Congrats, you won this game!</li>
+					<% when "LOSE" %>
+						<li id="loss">Unfortuneately you lost this game</li>
+					<% when "CHAMPIONS_KILLED"%>
+						<li>You killed <%= stat["value"] %> champions.</li>
+					<% when "NUM_DEATHS" %>
+						<li>You died <%= stat["value"] %> times.</li>
+					<% when "ASSISTS" %>
+						<li>You had <%= stat["value"] %> assists.</li>
+					<% when "GOLD_EARNED" %>
+						<li>You earned: <%= stat["value"] %> gold.</li>
+					<% when "MINIONS_KILLED" %>
+						<li>You killed <%= stat["value"] %> minions.</li>
+					<% when "LARGEST_MULTI_KILL" %>
+						<li>Your biggest multi-kill was <%= stat["value"] %></li>
+					<% when "LARGEST_KILLING_SPREE" %>
+						<li>Your longest killing spree was <%= stat["value"] %></li>
+					<% when "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS" %>
+						<li>You dealt a total of <%= stat["value"] %> damage.</li>
+					<% when "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS" %>
+						<li>You dealt a total of <%= stat["value"] %> magic damage.</li>
+					<% end %>
+				<% end %>
+			</ul>
 		</section>
 	<% end %>
 
