@@ -288,7 +288,7 @@ header{
 .left-cont {
 	width:320px;
 	height:800px;
-	border:1px solid red;
+	/*border:1px solid red;*/
 	float:left;
 	display:block;
 	margin-top:50px;
@@ -324,7 +324,7 @@ header{
 .right-cont {
 	width:780px;
 	height:800px;
-	border:1px solid red;
+	/*border:1px solid red;*/
 	float:right;
 	display:block;
 	margin-top:50px;
@@ -370,23 +370,113 @@ header{
 	list-style-type: none;
 	width:100%;
 	margin-top:15px;
-	
+
 }
 .channel-links li {
 	width:90%;
 	height:60px;
-	background:gray;
+	background:#F0F0F0;
 	margin:auto;
 	margin-top:10px;
 
 	border-radius:5px;
 }
-
-
-
-
-
-
+.channel-links li:hover {
+	background:#d8d8d8;
+	/*cursor:pointer;*/
+}
+.channel-links li img {
+	width:50px;
+	height:50px;
+	border:2px solid navy;
+	margin-top:3px;
+	margin-left:15px;
+	float:left;
+	display:block;
+}
+.channel-icon {
+	width:50px;
+	height:50px;
+	border:2px solid navy;
+	margin-top:3px;
+	margin-left: 15px;
+	float:left;
+	display:block;
+	overflow: hidden;
+}
+.channel-name{
+	width:130px;
+	height:100%;
+	margin-left:15px;
+	text-align: center;
+	float: left;
+	display: block;
+	font-family: Garamond;
+	font-size:20px;
+	line-height: 60px;
+	/*border-right:1px solid red;*/
+}
+.channel-type{
+	width:80px;
+	height:100%;
+	margin-left:15px;
+	float: left;
+	display: block;
+	/*border-right: 1px solid red;*/
+}
+.channel-type:hover{
+	cursor: pointer;
+}
+#youtube{
+	background-image: url('youtube.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#twitch{
+	background-image: url('twitch.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#day9{
+	background-image: url('day9.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#husky{
+	background-image: url('husky.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#tb{
+	background-image: url('tb.jpeg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#mlg{
+	background-image: url('mlgpro.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#wcs{
+	background-image: url('wcs.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#riot{
+	background-image: url('riot.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+#lol{
+	background-image: url('lol-logo.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;	
+}
+#ipl{
+	background-image: url('ipl.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;		
+}
 .divider {
 	border: 0;
 	height: 1px;

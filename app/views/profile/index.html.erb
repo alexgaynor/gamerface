@@ -1,7 +1,7 @@
 <header>
 	<div id="head-cont">
 		<a href="/home"><div id="gf-logo">GameFace</div></a>
-		<div id="network">GamerZ</div>
+		<a href="/gamerz"><div id="network">GamerZ</div></a>
 		<a href="/gamehub">
 			<div id="hub">GameHub</div>
 		</a>
@@ -39,14 +39,13 @@
 				<!-- <li id="starcraft-logo">StarCraft II</li> -->
 				<% @games.each do |g| %>
 					<% if g.game_id == 2 %>
-						<li id="lol-logo"><%= g.profile_name %></li>
+						<li id="lol-logo"></li>
 					<% else %>
 						<li id="starcraft-logo"><%= g.profile_name %></li>
 					<% end %>
 				<% end %>
 				<a href="/profile/addgame">
 					<li id="add-game">
-						Add Game
 						+
 					</li>
 				</a>

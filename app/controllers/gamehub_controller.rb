@@ -8,10 +8,10 @@ class GamehubController < ApplicationController
     			"X-Mashape-Authorization" => "MsFPP5vOhFqyY63bPvzZk1FsvbQui5MX"
  			}
 		) 
-		@response = league_data.body["data"]["gameStatistics"]["array"]
+		response = league_data.body["data"]["gameStatistics"]["array"]
 
-
-
+		@sorted = response.sort_by { |g| g["createDate"].to_date.day }
+		
 
 		# to get ranked game = league_data.body["data"]["gameStatistics"]["array"][game]["ranked"]
 		# to get time of game = league_data.body["data"]["gameStatistics"]["array"][9]["createDate"]

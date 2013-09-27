@@ -10,5 +10,5 @@ Gameface::Application.routes.draw do
   post '/profile/addgame', :to => 'profile#creategame'
 
   get '/gamehub', :to => 'gamehub#index'
-
+  get '/gamerz', :to => 'gamerz#index'
 end
