@@ -24,7 +24,22 @@
 </header>
 <div id="container">
 	<% @sorted.each do |game| %>
-		<li><%= game["createDate"] %></li>
+		<section>
+			<li><%= game["createDate"] %></li>
+			<li>
+				<% if game["ranked"] == false %>
+					Unranked
+				<% else %>
+					Ranked
+				<% end %>
+			</li>
+			<% if game["premadeSize"] > 1  %>
+				<li>You premade a team with <%= game["premadeSize"] %>/5 players.</li>
+			<% else %>
+				<li>You did not premake a team of players.</li>
+			<% end%>
+			
+		</section>
 	<% end %>
 
 </div>
