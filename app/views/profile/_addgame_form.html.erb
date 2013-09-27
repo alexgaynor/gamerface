@@ -1,0 +1,7 @@
+<%= form_for usergames, url: '/profile/addgame' do |g| %>
+	<%= g.label :game_id, "Select a game from the database to add to your profile" %>
+	<%= g.select(:game_id, options_for_select(@games_arr, 1)) %>
+	<%= g.label :profile_name %>
+	<%= g.text_field :profile_name %>
+	<%= g.submit "Add Game" %>
+<% end %>

@@ -1,0 +1,17 @@
+<header>
+	<div id="head-cont">
+		<div id="gf-logo">GameFace</div>
+		<div id="user-sign-inout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></div>
+		<div id="user-sign-inout"><%= link_to "Sign In", new_user_session_path %></div>
+	</div>
+</header>
+<div class="splash-background">
+	<div id="container">
+
+		<h1 class="welcome">Welcome to GameFace</h1>
+
+		<a href="/users/sign_up"><div id="sign-up">
+			<h3>Sign-up for GameFace</h3>
+		</div></a>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+<header>
+	<div id="head-cont">
+		<a href="/home"><div id="gf-logo">GameFace</div></a>
+		<div id="network">GamerZ</div>
+		<a href="/gamehub">
+			<div id="hub">GameHub</div>
+		</a>
+		<div class="acct-bar">
+			<% if user_signed_in? %>
+				<a href="/profile"><div class="mini-prof">
+					<div class="mini-prof-pic"><img src="<%= @user.prof_pic %>" /></div>
+					<div class="greeting">Welcome <%= @user.username %><br />
+						<div class="last-login">Logged In last on: <%= @user.last_sign_in_at.to_s.to_date %></div>
+					</div>
+					<div class="clear"></div>
+				</div></a>
+			<% else %>
+				<div class="user-sign-inout"><%= link_to "Sign In", new_user_session_path %></div>
+			<% end %>
+			<div id="user-sign-inout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+			</div>
+		</div>
+	</div>
+</header>
+<div id="container">
+
+	<div id="prof-page-pic">
+		<img src="<%= @user.prof_pic %>" />
+	</div>
+	<div id="user-info-cont">
+		<ul class="user-info-list">
+			<li>Username: <%= @user.username %></li>
+			<li>Location: <%= @user.location %></li>
+			<li>Last online: <%= @user.last_sign_in_at.to_s.to_date %></li>
+		</ul>
+		<div id="user-games-played">
+			<ul class="user-games-list">
+				<!-- <li id="lol-logo">League of Legends</li> -->
+				<!-- <li id="starcraft-logo">StarCraft II</li> -->
+				<% @games.each do |g| %>
+					<% if g.game_id == 2 %>
+						<li id="lol-logo"><%= g.profile_name %></li>
+					<% else %>
+						<li id="starcraft-logo"><%= g.profile_name %></li>
+					<% end %>
+				<% end %>
+				<a href="/profile/addgame">
+					<li id="add-game">
+						Add Game
+						+
+					</li>
+				</a>
+			</ul>
+		</div>
+	</div>
+</div>

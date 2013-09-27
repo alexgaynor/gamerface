@@ -1,0 +1,22 @@
+<header>
+	<div id="head-cont">
+		<a href="/"<div id="gf-logo">GameFace</div></a>
+	</div>
+</header>
+<div class="sign-in-background">
+	<div id="container">
+		<div id="sign-in-form-cont">
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			  <div><%= f.label :email %>
+			  <%= f.email_field :email, :autofocus => true %></div><br />
+
+			  <div><%= f.label :password %>
+			  <%= f.password_field :password %></div><br />
+
+			  <div><%= f.submit "Sign in" %></div>
+			<% end %>
+
+			<%= render "devise/shared/links" %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,98 @@
+<header>
+	<div id="head-cont">
+		<a href="/home"><div id="gf-logo">GameFace</div></a>
+		<div id="network">GamerZ</div>
+		<a href="/gamehub">
+			<div id="hub">GameHub</div>
+		</a>
+		<div class="acct-bar">
+			<% if user_signed_in? %>
+				<a href="/profile"><div class="mini-prof">
+					<div class="mini-prof-pic"><img src="<%= @user.prof_pic %>" /></div>
+					<div class="greeting">Welcome <%= @user.username %><br />
+						<div class="last-login">Logged In last on: <%= @user.last_sign_in_at.to_s.to_date %></div>
+					</div>
+					<div class="clear"></div>
+				</div></a>
+			<% else %>
+				<div class="user-sign-inout"><%= link_to "Sign In", new_user_session_path %></div>
+			<% end %>
+			<div id="user-sign-inout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+			</div>
+		</div>
+	</div>
+</header>
+<div id="container">
+	<div id="welcome-banner">
+		<h2>Welcome to the home page of GameFace</h2>
+		<h4>A network for gamers by gamers.</h4>
+	</div>
+
+	<div class="left-cont">
+		<section>
+			<h4>Professional sc2 Leagues</h4>
+			<div class="divider"></div>
+			<ul class="pro-links">
+				<a href="#"><li>European Starleague</li></a>
+				<a href="#"><li>North America Starleague</li></a>
+				<a href="#"><li>OnGameNet Starleague</li></a>
+				<a href="#"><li>World Cyber Games</li></a>
+				<a href="#"><li>Proleague</li></a>
+				<a href="#"><li>World Championship Series</li></a>
+			</ul>
+		</section>
+		<section>
+			<h4>Professional LoL Leagues</h4>
+			<div class="divider"></div>
+			<ul class="pro-links">
+
+			</ul>
+		</section>
+	</div>
+	<div class="right-cont">
+		<div class="sub-left-cont">
+			<section>
+				<h4>StarCraft 2 Strategy</h4>
+				<div class="divider"></div>
+				<ul class="pro-links">
+					<a href="http://www.liquipedia.org"><li>Liquipedia</li>
+					<a href="http://www.day9.tv"><li>Day9</li></a>
+					<a href="#"><li>Major League Gaming</li></a>
+					<a href="#"><li>Starleague</li></a>
+					<a href="#"><li>Something</li></a>
+					<a href="#"><li>Something</li></a>
+				</ul>
+			</section>
+			<section>
+				<h4>League of Legends Strategy</h4>
+				<div class="divider"></div>
+				<ul class="pro-links">
+					<a href=""><li>LoLNexus</li></a>
+					<a href="#"><li>MOBA Fire</li></a>
+					<a href="#"><li>Something</li></a>
+					<a href="#"><li>Something</li></a>
+					<a href="#"><li>Something</li></a>
+					<a href="#"><li>Something</li></a>
+				</ul>
+			</section>
+		</div>
+		<div class="sub-right-cont">
+			<section>
+				<h4>StarCraft 2 Channels</h4>
+				<div class="divider"></div>
+				<ul class="channel-links">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</section>
+			<section>
+				<h4>League of Legends Channels</h4>
+				<div class="divider"></div>
+			</section>
+
+		</div>
+
+	</div>
+</div>

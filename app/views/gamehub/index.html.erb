@@ -1,0 +1,31 @@
+<header>
+	<div id="head-cont">
+		<a href="/home"><div id="gf-logo">GameFace</div></a>
+		<div id="network">GamerZ</div>
+		<a href="/gamehub">
+			<div id="hub">GameHub</div>
+		</a>
+		<div class="acct-bar">
+			<% if user_signed_in? %>
+				<a href="/profile"><div class="mini-prof">
+					<div class="mini-prof-pic"><img src="<%= @user.prof_pic %>" /></div>
+					<div class="greeting">Welcome <%= @user.username %><br />
+						<div class="last-login">Logged In last on: <%= @user.last_sign_in_at.to_s.to_date %></div>
+					</div>
+					<div class="clear"></div>
+				</div></a>
+			<% else %>
+				<div class="user-sign-inout"><%= link_to "Sign In", new_user_session_path %></div>
+			<% end %>
+			<div id="user-sign-inout"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+			</div>
+		</div>
+	</div>
+</header>
+<div id="container">
+	<% sorted = @response.sort_by { ["createDate"] } %>
+	<% sorted.each do |game| %>
+		<li><%= game["createDate"] %></li>
+	<% end %>
+
+</div>
